@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Найденный пользователь</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    <h1>Пользователь которого вы искали:</h1>
+    <p th:text="'ФИО: ' + ${user.fullName}"/>
+    <p th:text="'Возраст: ' + ${user.age}"/>
+    <p th:text="'Заработная плата: ' + ${user.salary}"/>
+    <p th:text="'Email: ' + ${user.email}"/>
+    <p th:text="'Место работы: ' + ${user.job}"/>
+    <p th:text="'Информация о запросе: ' + ${infoMessage.userAgent}"></p>
+    <p th:text="'Информация о запросе: ' + ${infoMessage.creationTime}"></p>
+    <p th:text="'Информация о запросе: ' + ${infoMessage.nowTime}"></p>
+    <a href="/listOfUsers">Найти нового пользователя</a>
+    <a href="/user">Добавить нового пользователя</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    <h1>Форма для пользователя</h1>
+    <form action="#" th:action="@{/user}" th:object="${user}" method="post">
+        <p>ФИО: <input type="text" th:field="*{fullName}" required/></p>
+        <p>Возраст: <input type="number" min="18" max="65" th:field="*{age}" required/></p>
+        <p>Зарплата: <input type="number" min="0" th:field="*{salary}" required/></p>
+        <p>Место работы: <input type="text" th:field="*{job}" required/></p>
+        <p>E-mail: <input type="email" th:field="*{email}"
+                          pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" required/></p>
+        <p><input type="reset" value="Очистить"/> <input type="submit" value="Добавить"/></p>
+    </form>
+    <br>
+    <label for="upload">Правила заполнения файла: ФИО/Возраст/Зарплата/Место работы/Email
+        <br>
+        Пример: Моржов Виталий Прокофьевич/43/43503/Сидит дома/morjov2123@gmail.com
+    </label>
+    <form id="upload" action="#" th:action="@{/upload}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file"/>
+        <p><input type="submit" value="Отправить файл"/></p>
+    </form>
+    <br><br>
+    <p><a href="/listOfUsers">Найти пользователя</a></p>
+</body>
+</html>

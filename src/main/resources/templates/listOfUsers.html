@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск пользователя</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    <h1>Поиск пользователя</h1>
+    <form action="#" th:action="@{/listOfUsers}" th:object="${user}" method="post">
+        <label for="fullName">Заполните это поле</label>
+        <p>ФИО: <input type="text"id="fullName" th:field="*{fullName}"/></p>
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+    <p><a href="/user">Добавить пользователя</a></p>
+</body>
+</html>

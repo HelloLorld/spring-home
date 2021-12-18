@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест отправки почты</title>
+</head>
+<body>
+    <form action="#" th:action="@{/send_mail}" th:object="${mail}" method="post">
+        <p>Получатель: <input type="text" th:field="*{recipient}" required/></p>
+        <p>Тема письма: <input type="text" th:field="*{subject}" required/></p>
+        <p>Сообщение: <input type="text" th:field="*{message}" required/></p>
+        <p><input type="reset" value="Очистить"/> <input type="submit" value="Отправить"/></p>
+    </form>
+</body>
+</html>
